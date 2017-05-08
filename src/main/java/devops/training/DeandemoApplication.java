@@ -9,14 +9,9 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class DeandemoApplication {
 
-	@Bean
-	public CommandLineRunner cmdRunner(@Value("${greeter.location}") String greeterLocation) {
-		return new	CommandLineRunner() {
-			@Override
-			public void run(String... strings) throws Exception {
-				System.out.println("Hello: " + greeterLocation);
-			}
-		};
+	@GetMapping("/")
+	public String hello() {
+		return "Hello World";
 	}
 
     public static void main(String[] args) {
