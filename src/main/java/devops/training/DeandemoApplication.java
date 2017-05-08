@@ -1,5 +1,6 @@
 package devops.training;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,11 +10,11 @@ import org.springframework.context.annotation.Bean;
 public class DeandemoApplication {
 
 	@Bean
-	public CommandLineRunner cmdRunner() {
+	public CommandLineRunner cmdRunner(@Value("${greeter.location}") String greeterLocation) {
 		return new	CommandLineRunner() {
 			@Override
 			public void run(String... strings) throws Exception {
-				System.out.println("DemoApplication.run");
+				System.out.println("Hello: " + greeterLocation);
 			}
 		};
 	}
