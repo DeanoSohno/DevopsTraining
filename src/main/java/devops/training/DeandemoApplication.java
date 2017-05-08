@@ -12,7 +12,7 @@ public class DeandemoApplication {
 
 	@GetMapping("/")
 	public String hello() {
-		return "Hello World again and again";
+		return "Hello World again";
 	}
 
     public static void main(String[] args) {
